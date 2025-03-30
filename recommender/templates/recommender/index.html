@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% comment %} <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon"> {% endcomment %}
+    <title>Career Recommendation</title>
+    <style>
+        .form-container { max-width: 600px; margin: 2rem auto; padding: 2rem; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; }
+        input[type="number"] { width: 100%; padding: 0.5rem; }
+        .checkbox-group { display: flex; gap: 1rem; }
+        button { background: #007bff; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Career Recommendation System</h1>
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label>Weekly Self-Study Hours:</label>
+                {{ form.weekly_self_study_hours }}
+            </div>
+            
+            <div class="form-group">
+                <label>Absence Days (per year):</label>
+                {{ form.absence_days }}
+            </div>
+            
+            <div class="checkbox-group">
+                <div class="form-group">
+                    <label>Part-time Job:</label>
+                    {{ form.part_time_job }}
+                </div>
+                <div class="form-group">
+                    <label>Extracurricular Activities:</label>
+                    {{ form.extracurricular_activities }}
+                </div>
+            </div>
+
+            <h2>Academic Scores</h2>
+            <div class="scores-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                <div class="form-group">
+                    <label>Math:</label>
+                    {{ form.math_score }}
+                </div>
+                <div class="form-group">
+                    <label>History:</label>
+                    {{ form.history_score }}
+                </div>
+                <div class="form-group">
+                    <label>Physics:</label>
+                    {{ form.physics_score }}
+                </div>
+                <div class="form-group">
+                    <label>Chemistry:</label>
+                    {{ form.chemistry_score }}
+                </div>
+                <div class="form-group">
+                    <label>Biology:</label>
+                    {{ form.biology_score }}
+                </div>
+                <div class="form-group">
+                    <label>English:</label>
+                    {{ form.english_score }}
+                </div>
+                <div class="form-group">
+                    <label>Geography:</label>
+                    {{ form.geography_score }}
+                </div>
+            </div>
+
+            <button type="submit">Get Career Recommendation</button>
+        </form>
+    </div>
+</body>
+</html>

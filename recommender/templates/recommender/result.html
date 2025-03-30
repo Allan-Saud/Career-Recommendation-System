@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendation Result</title>
+    <style>
+        .result-container { max-width: 600px; margin: 2rem auto; padding: 2rem; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .career-title { color: #007bff; margin-bottom: 1rem; }
+        .description { line-height: 1.6; }
+        .try-again { margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1 class="career-title">Recommended Career: {{ career }}</h1>
+        <div class="description">
+            <h3>Career Overview:</h3>
+            <p>{{ description }}</p>
+        </div>
+        <div class="try-again">
+            <a href="/">Try Another Recommendation →</a>
+        </div>
+    </div>
+</body>
+</html>
